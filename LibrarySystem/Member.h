@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "Book.h"
+#include <iostream>
 
 using namespace std;
 
@@ -11,13 +12,13 @@ class Member{
     private:
         string name;
         int ID;
-        vector(Book) borrowedBooks;
+        vector<Book> borrowedBooks;
     public:
         Member();
-        Member(string name);
+        Member(string name, int ID);
 
         string getName() const;
-        string getID() const;
+        int getID() const;
         void borrowBook(Book& book);
         void returnBook(Book& book);
 

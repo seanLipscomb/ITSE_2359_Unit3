@@ -5,20 +5,20 @@ using namespace std;
 
 Member::Member() : name(""), ID(0) {}
 
-Member::Member(string name, int ID): name(name), ID(ID) {}
+Member::Member(string name, int ID) : name(name), ID(ID) {}
 
 string Member::getName() const { return name; }
 int Member::getID() const { return ID; }
 
-void Customer::borrowBook(Book& book) {
+void Member::borrowBook(Book& book) {
     if (book.isAvailable()){
-        book.borrow();
+        book.borrowBook();
         borrowedBooks.push_back(book);
     }
 }
 
-void Customer::returnBook(Book& book) {
-    for (size_t i=o; i<borrowedBooks.size(); i++) {
+void Member::returnBook(Book& book) {
+    for (size_t i=0; i<borrowedBooks.size(); i++) {
         if (borrowedBooks[i].getTitle() == book.getTitle()){
             book.returnBook();
             borrowedBooks.erase(borrowedBooks.begin() + i);
@@ -27,7 +27,7 @@ void Customer::returnBook(Book& book) {
     }
 }
 
-void Customer::displayBorrowedBooks() const {
+void Member::displayBorrowedBooks() const {
     cout << "Books borrowed by " << name << " (ID: " << ID << "):\n";
     for (const auto& book : borrowedBooks) {
         cout << book.getTitle() << " (" << book.getYearPublished() << ")\n";

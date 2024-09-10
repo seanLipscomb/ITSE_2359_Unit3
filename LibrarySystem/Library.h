@@ -4,6 +4,8 @@
 #include <vector>
 #include "Member.h"
 #include "Book.h"
+#include <string>
+#include <iostream>
 
 using namespace std;
 

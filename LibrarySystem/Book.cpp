@@ -1,13 +1,13 @@
 #include "Book.h"
-
+#include <iostream>
 using namespace std;
 
 //default constructor
-Book::Book() : title(""), author(""), yearPublished(0), isAvailable(false) {}
+Book::Book() : title(""), author(""), yearPublished(0), available(false) {}
 
 //parameterized constructor
-Book::Book(std::string title, std::string author, std::int yearPublished, std::bool isAvailable)
-    : title(title), author(author), yearPublished(yearPublished), isAvailable(isAvailable) {}
+Book::Book(string title, string author, int yearPublished, bool isAvailable)
+    : title(title), author(author), yearPublished(yearPublished), available(isAvailable) {}
 
 //getter for movie title
 string Book::getTitle() const{
@@ -30,13 +30,13 @@ bool Book::isAvailable() const{
 }
 
 //method to borrow the book
-void Movie::borrowBook(){
-    if (isAvailable){
-        isAvailable = false;
+void Book::borrowBook(){
+    if (available){
+        available = false;
     }
 }
 
 //method to return book
-void Movie::returnBook(){
-    isAvailable = true;
+void Book::returnBook(){
+    available = true;
 }

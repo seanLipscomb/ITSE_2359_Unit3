@@ -17,9 +17,9 @@ int main(){
     Member member1("River Song", 15);
     Member member2("Sean Shanty", 25);
 
-    library.addMember(customer1);
-    library.addMember(customer2);
+    library.addMember(member1);
+    library.addMember(member2);
 
     library.displayAvailableBooks();
-    
+
 }
