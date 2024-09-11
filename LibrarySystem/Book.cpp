@@ -26,7 +26,7 @@ int Book::getYearPublished() const{
 
 //getter for availability
 bool Book::isAvailable() const{
-    return isAvailable;
+    return available;
 }
 
 //method to borrow the book
